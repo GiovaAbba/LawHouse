@@ -1,0 +1,1 @@
+web: gunicorn lawhouse.wsgi:application

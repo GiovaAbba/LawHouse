@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <script src="{% static 'js/script.js' %}"></script>
+
+
+  <title>LawHouse</title>
+
+</head>
+<body>
+  <!---------------------------Ventana Modal--------------------------->
+  <div id="mainContent" style="display: none;"></div>
+  
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>¡Bienvenido!</h2>
+          <img src="{% static 'img/jimmy.gif' %}"  alt="GIF de bienvenida"class="jimmy">
+          <audio id="modalAudio">
+            <source src="{% static 'img/jimmy.mp3' %}" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+          </audio>
+    </div>
+  </div>
+<!----------------------Fin Ventana Modal---------------------------->
+
+
+  <header>
+    <div class="logoTexto">
+      <img src="{% static 'img/jimmy.gif' %}" class="avatar" onclick="startIntro()" id="puntero">
+      <h1 class="textoPrin">Law House</h1>
+      <img src="{% static 'img/logo.png' %}" alt="logoPrinc" class="logo">
+    </div>
+    
+    <div class="tabs">
+      <button class="tab-button active" onclick="showTab('inicio', event)">Inicio</button>
+      <button class="tab-button" onclick="showTab('inmobiliaria', event)">Inmuebles</button>
+      <button class="tab-button" onclick="showTab('juridica', event)">Aseoría Jurídica</button>
+      <button class="tab-button" onclick="showTab('contacto', event)">Contacto</button>
+    </div>
+  </header>
+
+  
+  <div id="inicio" class="tab-content active">
+   <div class="textos"> 
+      <h2>Bienvenidos</h2><br>
+      <p>Esta es la nueva inmobiliaria Sargio, una innovación en la industria, no cobramos por anunciar tus inmuebles, sin intermediarios y sin cobros. Y no solo eso, tambien contamos con un servicio adicional Jurídico el cual está incluido en nuestra página. ¡Ingresa! tendrás atención las 24/7.
+      </p>
+    </div>
+   <div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/X11KScXu9pg?si=-9XUX_V8gTLikbQD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+   </div>
+  </div>
+
+  <div id="inmobiliaria" class="tab-content">
+    <div class="textos">
+      <h2>Lotes</h2><br>
+      <p>Esta es tu inmobiliaria Sargio, <br>puedes poner tu inmueble y el texto con los datos respectivos.</p>
+    </div>
+
+    <div class="upload-area">
+      <label for="file-upload">
+        <input type="file" id="file-upload" name="image-upload" accept="image/*" />
+        <div class="upload-placeholder">
+          <img src="{% static 'img/subir.png' %}" alt="icono de subir imagen" class="upload-icon">
+          <p>Arrastra y suelta una imagen o haz clic para subir</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="textos">
+      <h2>Casas</h2><br>
+      <p>Esta es tu inmobiliaria Sargio, <br>puedes anunciar tus casas en venta sin ningún tipo de cobro adicional</p>
+    </div>
+
+    <div class="upload-area">
+      <label for="file-upload">
+        <input type="file" id="file-upload" name="image-upload" accept="image/*" />
+        <div class="upload-placeholder">
+          <img src="{% static 'img/subir.png' %}" alt="icono de subir imagen" class="upload-icon">
+          <p>Arrastra y suelta una imagen o haz clic para subir</p>
+        </div>
+      </label>
+    </div>
+  </div>
+
+<div id="contacto" class="tab-content">
+  <section class="contacto">
+    <h2>Contáctanos</h2>
+    <form id="formContacto">
+      <div class="campo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+      <div class="campo">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required />
+      </div>
+      <div class="campo">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required />
+      </div>
+      <div class="campo">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required />
+      </div>
+      <div class="campo">
+        <label for="mensaje">Comentario o mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</div>
+
+  <!-- ---------------------------------------PÁGINA DE SARITA--------------------------------------------------------->
+
+  <div id="juridica" class="tab-content">
+    <div class="sara">
+      <div class="textoSara" id="centrado">
+        <h1>Sara Carolina Oliveros Acosta</h1>
+        <p>Abogada - Servicios legales con tarifas CONALBOS 2025</p>
+      </div><br>
+
+      <div id="centrado">
+        <nav class="enlacesSara">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#carrito">Carrito</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div><br>
+
+      <div class="textoSara">
+        <section id="sobre-mi">
+          <h2>Sobre mi</h2>
+          <p><strong>Sara Carolina Oliveros Acosta</strong> Soy una profesional destacada en el ejercicio del derecho, reconocida por su ética, compromiso y trayectoria. Especializada en derecho civil, penal y laboral, ofrece asesoría jurídica con base en las tarifas oficiales de <strong>CONALBOS 2025</strong>, garantizando transparencia y equidad en cada proceso.</p>
+          <ul>
+            <li>✅ Atención personalizada y confidencial</li>
+            <li>✅ Pactos de honorarios claros y justos</li>
+            <li>✅ Contratos escritos que definen el alcance de la gestión</li>
+            <li>✅ Defensa firme de los derechos de sus clientes</li>
+          </ul>
+        </section>
+      </div><br>
+
+      <div class="textoSara">
+        <section id="servicios">
+          <h2>Servicios Legales</h2>
+          <ul>
+            <li>📘 Asesoría jurídica personalizada</li>
+            <li>⚖️ Representación judicial en procesos civiles, penales y laborales</li>
+            <li>📄 Redacción de documentos legales</li>
+            <li>🤝 Acompañamiento en conciliaciones y negociaciones</li>
+          </ul>
+          <p><strong>Tarifas:</strong> Basadas en la tabla oficial de honorarios de CONALBOS 2025.</p>
+        </section>
+      </div><br>
+  <div class="textoSara">
+    <section id="terminos-condiciones" class="panel textoSara">
+      <h2>📄 Términos y Condiciones de Uso del Formulario</h2>
+      <p><strong>LawHouse</strong>, firma jurídica liderada por Sara Carolina Oliveros Acosta, te da la bienvenida y te invita a leer cuidadosamente los siguientes términos y condiciones aplicables al uso del formulario de asesoría legal gratuita y al tratamiento de los datos personales que nos proporciones.</p>
+
+      <h3>1. Aceptación de los Términos</h3>
+      <p>Al enviar el formulario, aceptas expresamente estos términos y condiciones, así como la política de privacidad publicada en este sitio web. El envío implica tu consentimiento informado para el tratamiento de tus datos personales conforme a la normativa vigente en Colombia.</p>
+
+      <h3>2. Información Recolectada</h3>
+      <p>El formulario recopila información personal como nombre, correo electrónico, número de contacto, datos de identidad y detalles relacionados con tu consulta jurídica. Esta información es proporcionada voluntariamente por ti.</p>
+
+      <h3>3. Finalidad del Tratamiento</h3>
+      <ul>
+        <li>📌 Evaluar preliminarmente tu caso</li>
+        <li>📌 Ofrecerte una asesoría legal inicial gratuita</li>
+        <li>📌 Establecer comunicación contigo si es necesario</li>
+      </ul>
+
+      <h3>4. Confidencialidad y Seguridad</h3>
+      <p>LawHouse se compromete a proteger la confidencialidad de tu información personal mediante medidas técnicas, administrativas y jurídicas adecuadas, conforme a la Ley 1581 de 2012 y demás normas aplicables en Colombia.</p>
+
+      <h3>5. Derechos del Titular</h3>
+      <p>Como titular de los datos, puedes ejercer tus derechos de acceso, rectificación, cancelación, oposición y revocatoria del consentimiento. Para ello, puedes enviar tu solicitud al correo:</p>
+      <p>📧 <a href="mailto:protecciondatos@lawhouse.com.co">protecciondatos@lawhouse.com.co</a></p>
+
+      <h3>6. Limitación de Responsabilidad</h3>
+      <p>LawHouse no se hace responsable por el uso indebido de tus datos personales por parte de terceros ajenos a nuestra gestión. En caso de incidentes de seguridad que afecten tu información, se te notificará oportunamente.</p>
+
+      <h3>7. Modificaciones</h3>
+      <p>Estos términos pueden ser modificados en cualquier momento. Las actualizaciones serán publicadas en esta misma sección y entrarán en vigor desde su publicación.</p>
+
+      <h3>8. Ley Aplicable y Jurisdicción</h3>
+      <p>Este documento se rige por las leyes de la República de Colombia. Cualquier controversia será resuelta por los jueces competentes en el territorio colombiano.</p>
+
+      <h3>9. Declaración de Consentimiento</h3>
+      <p>Al enviar el formulario, declaras que has leído, comprendido y aceptado estos términos y condiciones, y autorizas el tratamiento de tus datos personales conforme a lo aquí establecido.</p>
+
+      <h3>📬 Contacto</h3>
+      <p>📧 <a href="mailto:sc53140a.ut@poliandino.edu.co">sc53140a.ut@poliandino.edu.co</a></p>
+
+      <h3>📅 Vigencia</h3>
+      <p>Estos términos tienen vigencia indefinida. LawHouse se reserva el derecho de modificar, suspender o interrumpir el servicio de asesoría gratuita en cualquier momento, lo cual será informado oportunamente.</p>
+    </section>
+  </div><br>
+
+<div class="textoSara">
+  <section id="politica-datos" class="panel textoSara">
+    <h2>🔐 Política de Tratamiento de Datos Personales</h2>
+
+    <p><strong>Responsable del tratamiento:</strong> LawHouse – Sara Carolina Oliveros Acosta</p>
+    <p><strong>Correo electrónico:</strong> <a href="mailto:sc53140a.ut@poliandino.edu.co">sc53140a.ut@poliandino.edu.co</a></p>
+    <p><strong>Teléfonos:</strong> 305 312 2793 / 320 212 0066</p>
+
+    <h3>1. Finalidad del tratamiento</h3>
+    <ul>
+      <li>📌 Prestar servicios jurídicos personalizados</li>
+      <li>📌 Gestionar solicitudes, consultas y trámites legales</li>
+      <li>📌 Enviar información relevante sobre el estado de los casos</li>
+      <li>📌 Cumplir obligaciones legales y contractuales</li>
+    </ul>
+
+    <h3>2. Derechos del titular</h3>
+    <ul>
+      <li>✅ Conocer, actualizar y rectificar sus datos personales</li>
+      <li>✅ Solicitar prueba de la autorización otorgada</li>
+      <li>✅ Ser informado sobre el uso que se ha dado a sus datos</li>
+      <li>✅ Revocar la autorización y/o solicitar la supresión de sus datos</li>
+    </ul>
+
+    <h3>3. Procedimiento para ejercer derechos</h3>
+    <ul>
+      <li>📝 Nombre completo</li>
+      <li>📝 Tipo de solicitud (consulta, rectificación, supresión, revocatoria)</li>
+      <li>📝 Descripción clara de los datos que desea modificar o eliminar</li>
+    </ul>
+
+    <h3>4. Seguridad de la información</h3>
+    <p>LawHouse implementa medidas técnicas, humanas y administrativas para proteger los datos personales contra acceso no autorizado, pérdida, alteración o divulgación.</p>
+
+    <h3>5. Vigencia</h3>
+    <p>Esta política entra en vigencia a partir del <strong>22 de octubre de 2025</strong> y podrá ser actualizada conforme a cambios normativos o de operación.</p>
+  </section>
+</div><br>
+
+      <div class="textoSara">
+        <section id="carrito">
+          <h2>🛒 Selecciona tus servicios</h2>
+          <div id="servicios-lista">
+            <label><input type="checkbox" value="1423000"> Declaración Extrajudicial ($1.423.000)</label><br>
+            <label><input type="checkbox" value="2846000"> Apertura de Testamento ($2.846.000)</label><br>
+            <label><input type="checkbox" value="1423000"> Proceso Ejecutivo Singular ($1.423.000)</label><br>
+            <label><input type="checkbox" value="0"> Cobro Prejurídico (10% del valor del crédito)</label><br>
+            <label><input type="checkbox" value="2846000"> Separación de Bienes / Liquidación de Sociedad Conyugal ($2.846.000)</label><br>
+            <label><input type="checkbox" value="4269000"> Matrimonio Civil ($4.269.000)</label><br>
+            <label><input type="checkbox" value="1423000"> Cambio de Nombre ($1.423.000)</label><br>
+            <label><input type="checkbox" value="711500"> Consulta Oral ($711.500)</label><br>
+            <label><input type="checkbox" value="1423000"> Consulta Escrita ($1.423.000)</label><br>
+            <label><input type="checkbox" value="2846000"> Presentación de Denuncia ($2.846.000)</label><br>
+            <label><input type="checkbox" value="1423000"> Interrogatorio de Parte ($1.423.000)</label><br>
+            <label><input type="checkbox" value="2846000"> Visita a Cárcel y Estudio de Documentos ($2.846.000)</label><br>
+            <label><input type="checkbox" value="2846000"> Audiencias Preliminar
+            <label><input type="checkbox" value="1423000"> Declaración Extrajudicial ($1.423.000)</label><br>
+            <label><input type="checkbox" value="2846000"> Apertura de Testamento ($2.846.000)</label><br>
+            <label><input type="checkbox" value="1423000"> Proceso Ejecutivo Singular ($1.423.000)</label><br>
+            <label><input type="checkbox" value="711500"> Consulta Oral ($711.500)</label><br>
+            <label><input type="checkbox" value="1423000"> Consulta Escrita ($1.423.000)</label><br>
+            <label><input type="checkbox" value="2846000"> Visita a Cárcel ($2.846.000)</label><br>
+            <label><input type="checkbox" value="4269000"> Matrimonio Civil ($4.269.000)</label><br>
+            </div>
+            <p><strong>Total estimado:</strong> <span id="total">$0</span></p>
+            <button onclick="enviarWhatsApp()" class="f_whatsapp">Solicitar por WhatsApp</button>
+        </section>
+      </div><br>
+
+      <div class="textoSara">
+        <section id="contacto">
+          <h2>Contacto</h2>
+          <p>📧 Correo: <a href="mailto:sc53140a.ut@poliandino.edu.co">sc53140a.ut@poliandino.edu.co</a></p>
+          <p>📞 Teléfonos: 305 312 2793 / 320 212 0066</p>
+          <p>🌐 Redes sociales:</p>
+          <div class="redes">
+            <a href="https://facebook.com/scoliverosa" target="_blank">📘 Facebook</a><br>
+            <a href="https://instagram.com/scoliverosa" target="_blank">📸 Instagram</a><br>
+            <a href="https://tiktok.com/@scoliverosa" target="_blank">🎵 TikTok</a><br>
+            <a href="https://wa.me/573053122793" target="_blank">💬 WhatsApp</a>
+          </div>
+        </section>
+      </div><br>
+
+      <div class="textoSara">
+        <section id="agenda">
+          <h2>📅 Agenda tu consulta</h2>
+          <p>Selecciona el día y la hora que más te convenga. Las citas están disponibles de lunes a viernes entre las 10:00 am y las 4:00 pm.</p>
+          <a href="https://calendar.google.com/calendar/u/0?cid=c2M1MzE0b2EudXRAcG9saWFuZGluby5lZHUuY28" target="_blank" class="boton">Agendar con Google Calendar</a>
+        </section>
+      </div><br>
+
+      <div class="textoSara" id="centrado">
+        <iframe src="https://calendar.google.com/calendar/embed?src=dcee581434134f5f6fff9a34f2f8f594d62ee6b2f976dcc0a1a0bd68a325726c%40group.calendar.google.com&ctz=America%2FBogota" style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+    </div>
+  </div>
+<!-------------------------------------------------FIN PÁGINA SARITA--------------------------------------------------------------------------->
+
+ <footer>
+    <p>&copy; 2025 LawHouse Administrado por: SarGio</p>
+  </footer>
+
+</body>
+</html>
