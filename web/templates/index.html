@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  <script src="{% static 'js/script.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/styles_lw.css' %}" />
+  <script src="{% static 'js/script_lw.js' %}"></script>
 
 
   <title>LawHouse</title>
@@ -19,9 +19,9 @@
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
         <h2>¡Bienvenido!</h2>
-          <img src="{% static 'img/jimmy.gif' %}"  alt="GIF de bienvenida"class="jimmy">
+          <img src="{% static 'img/jimmy_lw.gif' %}"  alt="GIF de bienvenida"class="jimmy">
           <audio id="modalAudio">
-            <source src="{% static 'img/jimmy.mp3' %}" type="audio/mpeg">
+            <source src="{% static 'img/jimmy_lw.mp3' %}" type="audio/mpeg">
                 Tu navegador no soporta el elemento de audio.
           </audio>
     </div>
@@ -31,9 +31,9 @@
 
   <header>
     <div class="logoTexto">
-      <img src="{% static 'img/jimmy.gif' %}" class="avatar" onclick="startIntro()" id="puntero">
+      <img src="{% static 'img/jimmy_lw.gif' %}" class="avatar" onclick="startIntro()" id="puntero">
       <h1 class="textoPrin">Law House</h1>
-      <img src="{% static 'img/logo.png' %}" alt="logoPrinc" class="logo">
+      <img src="{% static 'img/logo_lw.png' %}" alt="logoPrinc" class="logo">
     </div>
     
     <div class="tabs">
@@ -67,7 +67,7 @@
       <label for="file-upload">
         <input type="file" id="file-upload" name="image-upload" accept="image/*" />
         <div class="upload-placeholder">
-          <img src="{% static 'img/subir.png' %}" alt="icono de subir imagen" class="upload-icon">
+          <img src="{% static 'img/subir_lw.png' %}" alt="icono de subir imagen" class="upload-icon">
           <p>Arrastra y suelta una imagen o haz clic para subir</p>
         </div>
       </label>
@@ -82,7 +82,7 @@
       <label for="file-upload">
         <input type="file" id="file-upload" name="image-upload" accept="image/*" />
         <div class="upload-placeholder">
-          <img src="{% static 'img/subir.png' %}" alt="icono de subir imagen" class="upload-icon">
+          <img src="{% static 'img/subir_lw.png' %}" alt="icono de subir imagen" class="upload-icon">
           <p>Arrastra y suelta una imagen o haz clic para subir</p>
         </div>
       </label>
