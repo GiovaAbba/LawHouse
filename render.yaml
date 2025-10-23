@@ -2,5 +2,8 @@ services:
   - type: web
     name: lawhouse
     env: python
+    envVars:
+      - key: PORT
+        value: 10000
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
-    startCommand: gunicorn lawhouse.wsgi:application
+    startCommand: gunicorn lawhouse.wsgi:application --bind 0.0.0.0:$PORT
